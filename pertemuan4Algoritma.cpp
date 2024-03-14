@@ -33,7 +33,22 @@ void input() {			//prosedure input
 void insertionsort() {		//procedure Insertion sort
 	int temp;				//membuat variable data temporer atau penyiapa  sementara
 	int i, j;				//membuat variabel j sebagai penanda
+	for (i = 1; i <= n - 1; i++) {	//1.looping dengan i dimulai dari 1 hingga n-1
+		temp = arr[i];				//2.simpan nilai arr[1] ke variabel sementara temp
+		j = i - 1;					//3.setting nilai j sama dengan i-1;
 
+		while (j >= 0 && arr[j] > temp) //4.looping while dimana nilai j lebih besar sama dengan 0 dan
+		{								//arr[j] lebih besar daripada temp
+			arr[j + 1] = arr[j];		//4.a. simpan arr[j] lebih besar daripada temp
+			j--;						//4.b decrement nilai j by 1
+		}
+		arr[j + 1] = temp;				//5.simpan nilai temp ke dalam arr[j+1]
+
+		cout << "\npass" << i << ":";	//output ke layar
+		for (int k = 0; k < n; k++) {	//looping ninlai k dimulai dari 0 hingga n-1
+			cout << arr[k] << "";		//output ke layar
+		}
+	}
 }
 
 int main()
